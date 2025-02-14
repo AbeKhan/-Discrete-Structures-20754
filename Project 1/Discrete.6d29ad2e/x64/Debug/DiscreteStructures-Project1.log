@@ -1,25 +1,11 @@
 ﻿  SourceVersion1.cpp
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(20,10): warning C4200: nonstandard extension used: zero-sized array in struct/union
-  (compiling source file 'SourceVersion1.cpp')
-      C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(20,10):
-      This member will be ignored by a defaulted constructor or copy/move assignment operator
-  
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(46,40): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(65,34): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
   (compiling source file 'SourceVersion1.cpp')
   
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(104,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(81,30): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'SourceVersion1.cpp')
   
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(113,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  (compiling source file 'SourceVersion1.cpp')
-  
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(119,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  (compiling source file 'SourceVersion1.cpp')
-  
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(125,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  (compiling source file 'SourceVersion1.cpp')
-  
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(131,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(130,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   (compiling source file 'SourceVersion1.cpp')
   
   DiscreteStructures-Project1.vcxproj -> C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\x64\Debug\DiscreteStructures-Project1.exe

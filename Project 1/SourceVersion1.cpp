@@ -17,28 +17,21 @@
 
 using namespace std;
 int main() {
+
+    //u32string equationTest = U"(𝑝∨𝑞)∧(𝑝∧𝑞)⨁";
+    Proposition equationTest(L"~(𝑝∨𝑞)∧(𝑝∧𝑞)⨁");
+  
     /*
-    ∧   *           V   +          ~
-    ⨁   ^           →   ->         ↔   <->
-    ≡   ====        T   1          F    0
+    Proposition equation1(L"(p∨q)∧(~p∧~q)");
+    Proposition equation2(L"(p↔q)→(~p↔~q)");
+    Proposition equation3(L"(p∨q)∧(~p∨r)→(p∧r)");
+    Proposition equation4(L"((p→r)→q)↔(p→(q→r))");
     */
 
-    //char32_t ch = U'𐍈'; // Example Unicode character beyond BMP
-    //int unicodeValue = static_cast<int>(ch);
-
-    //Not working std::setlocale(LC_ALL, "");
-    //Not working std::wcout.imbue(std::locale(""));
-    //u32string equationTest = U"(𝑝∨𝑞)∧(𝑝∧𝑞)⨁";
-    //wstring equationTest = L"~(𝑝∨𝑞)∧(𝑝∧𝑞)⨁";
-    //wcout << static_cast<int>(equationTest[6]) << endl;
-    //if (equationTest[10] = "∧") { cout << "Match" << endl; }
-
-
-
     //equation4 = characterSwap(equation1);
-    Proposition equation1("Equation1");
-    equation1.displayTruthTable();
-    equation1.fReleaseMemory(); //Not working
+    Proposition equation1(L"");
+    equationTest.displayTruthTable();
+    equationTest.fReleaseMemory(); //Not working
 
    
     return 0;

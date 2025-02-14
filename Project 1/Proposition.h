@@ -16,43 +16,69 @@ private:
     int variableCount;
     int colCount;
     int rowCount;
-    int** array;// = new int* [rowCount];
-    char charArray[];
+    int** array;
+    string charArray;
+    wstring origString;
 
-    string characterSwap(string equation) {
-        for (char& c : equation) {
-            cout << (int)c << endl;
+    void characterSwap(wstring equation) { //Use Switch instead of if statments
+        int tempChar;
+        int i = 0;
+        while (i < equation.size()) {
+            tempChar = (int)equation[i];
+                                   //LogicOperator   DisplayOperator    CodeOperator
+            if (tempChar == 8743) {//  ∧    *    &&
+                equation[i] = '*';
+            }
+            if (tempChar == 8744) {//  V    +    ||
+                equation[i] = '+';
+            }
+            if (tempChar == 8853 || tempChar == 10753) {//  ⨁    ^    XOR
+                equation[i] = '^';
+            }
+            if (tempChar == 172 || tempChar == 126 ) {// ~    
+                equation[i] = '~';
+            }
+            if (tempChar == 8801) {// ≡    ====
+                equation.erase(i,1);
+                equation.insert(i, 4, '=');
+            }
+            if (tempChar == 8594) {// →    ->    
+                equation[i] = '-';
+                equation.insert(i+1, 1, '>');
+                i++;
+            }
+            if (tempChar == 8596) {// ↔    <->    
+                equation[i] = '<';
+                equation.insert(i+1, 1, '-');
+                equation.insert(i+2, 1, '>');
+                i++; i++;
+            }
+        i++;
         }
-        cout << equation.size() << endl;
-        return equation;
+        /*Testing Only*/ wcout << equation << endl;
     }
     int numberOfVariables(wstring equation) {
-        int count = 0;
         int i = 0;
-        wchar_t tempChar;
+        char tempChar;  //wchar_t tempChar;
         bool addChar;
-        //charArray = new char[2];
         while (i<equation.size()){                  //Reviewing each character of the string.
             tempChar = equation[i];
             if( ((int)tempChar >= 97 && (int)tempChar <= 122)/*a-z*/   ||  ((int)tempChar >= 65 && (int)tempChar <= 90)/*A-Z*/  ){
                 addChar = true;
-                for (int j = 0; j <= count; j++) {  //Checking for unique chars
+                for (int j = 0; j <= charArray.size(); j++) {  //Checking for unique chars
                     if (tempChar == charArray[j]){
                         addChar = false;
                         break;
                     }
                 }
                 if (addChar == true) {
-                    charArray[count] = tempChar;    //Adding Char
-                    count++;                        //Character count
-                    /*Testing*/wcout << tempChar << " : " << (int)tempChar << " : " << charArray[count-1] << " : " << endl;
-                }  
-            }
+                    charArray.push_back(tempChar);    //Adding Char
+                    /*Testing*/ wcout << tempChar << " : " << (int)tempChar << " : " << charArray.size() << " : " << endl;
+                } 
+            }//End if for a-Z
             i++;
         }
-        
-        //cout << "Something went wrong \n";
-        return count;
+        return charArray.size();
     }
 
     void buildingArray(int cols, int rows) {
@@ -93,45 +119,18 @@ private:
 
 public:
     
-    Proposition(string equation) { //Constructor
+    Proposition(wstring equation) { //Constructor
 
-        if (equation == "Equation1") {
-            variableCount = numberOfVariables(L"(p∨q)∧(p∧q)⨁r"); //Something goes wrong in the memory when Variables 4+  
+        origString = equation;
+        characterSwap(equation);
+        variableCount = numberOfVariables(equation);
+        partCount = 3;
+        colCount = partCount + variableCount;
+        rowCount = pow(2, variableCount); // 2 ^ variableCount;  
+        array = new int* [rowCount];        //Defining the size of the array
+        buildingArray(colCount, rowCount);  //Building Array
+        assignVariableValues();
 
-            partCount = 3;
-            colCount = partCount + variableCount;
-            rowCount = pow(2, variableCount); // 2 ^ variableCount;  
-            array = new int* [rowCount];
-            buildingArray(colCount, rowCount);
-            assignVariableValues();
-        }else
-        if (equation == "Equation2") {
-            partCount = 3;
-            variableCount = 2;
-            colCount = partCount + variableCount;
-            rowCount = pow(2, variableCount);;
-        }else
-        if (equation == "Equation3") {
-            partCount = 5;
-            variableCount = 3;
-            colCount = partCount + variableCount;
-            rowCount = pow(2, variableCount);;
-        }else
-        if (equation == "Equation4") {
-            partCount = 5;
-            variableCount = 3;
-            colCount = partCount + variableCount;
-            rowCount = pow(2, variableCount);;
-        }else
-        {
-            partCount = 0;
-            variableCount = 0;
-            colCount = partCount + variableCount;
-            rowCount = pow(2, variableCount);;
-        }
-
-
-       
 	}
     ~Proposition() {//Deconstructor
 
@@ -145,10 +144,10 @@ public:
         //for (int i = 0; i < 3; ++i) {
         //    delete[] array[i];  // Delete each row
         //}
-        for (int i = 0; i < rowCount; ++i) {
+        /*for (int i = 0; i < rowCount; ++i) {
             array[i] = nullptr;
             delete[] array[i];
-        }
+        }*/
         //delete[] array;
         //array = nullptr;
     }
