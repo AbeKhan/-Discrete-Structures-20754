@@ -4,7 +4,8 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <iomanip> //This is used for the display/output
+#include <iomanip>  //This is used for the display/output
+#include <locale>   //Testing for Unicode accepting chars :
 
 
 using namespace std;
@@ -12,89 +13,96 @@ using namespace std;
 class Proposition
 {
 private:
-    int partCount;
-    int variableCount;
-    int colCount;
-    int rowCount;
-    int** array;
-    string charArray;
-    wstring origString;
+    int partCount;                      //How many parts in the equation ()
+    int colCount;                       //Total number of columns in the truth table
+    int rowCount;                       //Total number of rows in the truth table
+    int** array;                        //The total size of the Truth Table
+    string charArray;                   //Unique CHARs of variables p, q, r, etc...
+    string displayEquation;             //Building the string for display, Idk if this is needed.
+    string evaluateEquation;            //Building the string to be evaluated, Idk if this is needed.
 
-    void characterSwap(wstring equation) { //Use Switch instead of if statments
+    string* equPartArray;//Testing
+
+    void parseString(wstring equation) { //Use Switch instead of if statements
         int tempChar;
+        bool addChar;
         int i = 0;
         while (i < equation.size()) {
             tempChar = (int)equation[i];
-                                   //LogicOperator   DisplayOperator    CodeOperator
-            if (tempChar == 8743) {//  ∧    *    &&
-                equation[i] = '*';
+
+            switch (tempChar)                                   //LogicOperator   DisplayOperator    CodeOperator
+            {
+            case 8743:                                          //  ∧    *    &&
+                displayEquation.push_back('*');
+                evaluateEquation = evaluateEquation + "&&";
+                break;
+            case 8744:                                          //  V    +    ||
+                displayEquation.push_back('+');
+                evaluateEquation = evaluateEquation + "||";
+                break;
+            case 8853: case 10753:                              //  ⨁    ^    XOR
+                displayEquation.push_back('^');
+                evaluateEquation = evaluateEquation + "XOR";
+                break;
+            case 126:                           
+            case 172:                                           //  ~
+                displayEquation.push_back('~');
+                evaluateEquation.push_back('~');                //not sure what to put here yet.
+                break;
+            case 8801:                                          //  ≡    ====
+                displayEquation = displayEquation + "====";
+                evaluateEquation = evaluateEquation + "==";     //not sure what to put here yet.
+                break;
+            case 8594:                                          //  →    ->
+                displayEquation = displayEquation + "->";
+                evaluateEquation = evaluateEquation + "<=";     //Not Sure
+                break;
+            case 8596:                                          //  ↔    <->
+                displayEquation = displayEquation + "<->";
+                evaluateEquation = evaluateEquation + ">=";     //Not Sure
+                break;
+            case 40:
+                partCount++;
+            default:
+                displayEquation.push_back(equation[i]);
+                evaluateEquation.push_back(equation[i]);
+                break;
             }
-            if (tempChar == 8744) {//  V    +    ||
-                equation[i] = '+';
-            }
-            if (tempChar == 8853 || tempChar == 10753) {//  ⨁    ^    XOR
-                equation[i] = '^';
-            }
-            if (tempChar == 172 || tempChar == 126 ) {// ~    
-                equation[i] = '~';
-            }
-            if (tempChar == 8801) {// ≡    ====
-                equation.erase(i,1);
-                equation.insert(i, 4, '=');
-            }
-            if (tempChar == 8594) {// →    ->    
-                equation[i] = '-';
-                equation.insert(i+1, 1, '>');
-                i++;
-            }
-            if (tempChar == 8596) {// ↔    <->    
-                equation[i] = '<';
-                equation.insert(i+1, 1, '-');
-                equation.insert(i+2, 1, '>');
-                i++; i++;
-            }
-        i++;
-        }
-        /*Testing Only*/ wcout << equation << endl;
-    }
-    int numberOfVariables(wstring equation) {
-        int i = 0;
-        char tempChar;  //wchar_t tempChar;
-        bool addChar;
-        while (i<equation.size()){                  //Reviewing each character of the string.
-            tempChar = equation[i];
-            if( ((int)tempChar >= 97 && (int)tempChar <= 122)/*a-z*/   ||  ((int)tempChar >= 65 && (int)tempChar <= 90)/*A-Z*/  ){
+            if (((int)tempChar >= 97 && (int)tempChar <= 122)/*a-z*/ || ((int)tempChar >= 65 && (int)tempChar <= 90)/*A-Z*/) {
                 addChar = true;
                 for (int j = 0; j <= charArray.size(); j++) {  //Checking for unique chars
-                    if (tempChar == charArray[j]){
+                    if (tempChar == charArray[j]) {
                         addChar = false;
                         break;
                     }
                 }
                 if (addChar == true) {
                     charArray.push_back(tempChar);    //Adding Char
-                    /*Testing*/ wcout << tempChar << " : " << (int)tempChar << " : " << charArray.size() << " : " << endl;
-                } 
+                    //wcout << tempChar << " : " << (int)tempChar << " : " << charArray.size() << " : " << endl;      /*Testing*/ 
+                }
             }//End if for a-Z
-            i++;
+        //cout << displayEquation << endl << evaluateEquation << endl; /*Testing Only*/
+        i++;
         }
-        return charArray.size();
-    }
+        if ((int)equation[0] != 40) {   //This is the final check.
+            partCount++;
+        }
 
+        //wcout << equation << endl; /*Testing Only*/ 
+    }
     void buildingArray(int cols, int rows) {
         for (int i = 0; i < rows; ++i) {
             array[i] = new int[cols];
         } 
     }
-
     void assignVariableValues() { // Assigning the Base Variables Values 
         bool flippingValue;
         int flippingRow = rowCount;
 
         int i = 0; int row;
-        while (i<(variableCount)) {//All Varaiable Columns
+        while (i<(charArray.size())) {//All Variable Columns
             if (flippingRow < 1) { flippingRow = 1; }
-            row = 0;
+            row = 0; 
             while (row<rowCount) { //All Rows Needed in columns
                 int j = 0;
                 flippingValue = 1;  //True
@@ -117,29 +125,54 @@ private:
         }
     }
 
+    string defineEquationParts(string equPart /*Recursion*/, int count) {
+        int loopCount = 0;
+        bool skip;
+        int i = 1;
+        while (loopCount < equPart.size())
+        {
+            skip = false;
+            if (equPart[loopCount] == '(') {        //Down the rabbit trail
+                cout << equPart.substr(loopCount+1) << endl;
+                equPartArray[count] = equPartArray[count] + "(" + defineEquationParts(equPart.substr(loopCount + 1), count + i);
+                i++;
+                skip = true;
+                loopCount = equPartArray[count].size();
+            }
+            if (equPart[loopCount] == ')')          //UP the rabbit trail
+            {
+                equPartArray[count] = equPartArray[count] + equPart[loopCount];
+                return equPartArray[count];
+            } 
+            if (skip != true) {                     //Building the rabbit trail
+                equPartArray[count] = equPartArray[count] + equPart[loopCount];
+                loopCount++;
+            }
+            //cout << equPartArray[count] << endl;    /*Testing Only*/
+        }
+        return (equPartArray[count]);
+    } 
+
 public:
     
-    Proposition(wstring equation) { //Constructor
-
-        origString = equation;
-        characterSwap(equation);
-        variableCount = numberOfVariables(equation);
-        partCount = 3;
-        colCount = partCount + variableCount;
-        rowCount = pow(2, variableCount); // 2 ^ variableCount;  
-        array = new int* [rowCount];        //Defining the size of the array
-        buildingArray(colCount, rowCount);  //Building Array
+    Proposition(wstring equation /*Constructor*/) {
+        parseString(equation);                          /*Going through String, building the strings 'displayEquation', 'evaluateEquation' */
+        partCount;                                      /*How many to parts of the equation*/
+        colCount = partCount + charArray.size();
+        rowCount = pow(2, charArray.size());            //Setting number of rows in true table 2 ^ variableCount;  
+        array = new int* [rowCount];                    //Defining the size of the array
+        buildingArray(colCount, rowCount);              //Building Array - only the variable columns    
         assignVariableValues();
 
+        equPartArray = new string[partCount];
+        defineEquationParts(displayEquation, 0);
+
 	}
-    ~Proposition() {//Deconstructor
-
-    }
-
-    int fRowCount()     {return rowCount;}
-    int fColCount()     {return colCount;}
-    int fPartCount()    {return partCount;}
-    int fValCount()     {return variableCount;}
+    ~Proposition() {}                                   /*Deconstructor*/
+    int fRowCount()     {return rowCount;}              //Retunring number of rows in true table       
+    int fColCount()     {return colCount;}              //Returning number of columns in truth table
+    int fPartCount()    {return partCount;}             //Returning number of equation parts ()
+    int fValCount()     {return charArray.size();}      //Returning number of unique chars in equation.
     void fReleaseMemory() {
         //for (int i = 0; i < 3; ++i) {
         //    delete[] array[i];  // Delete each row
@@ -152,23 +185,35 @@ public:
         //array = nullptr;
     }
 
-    //Setting the Value of p
-    void displayTruthTable() {
-        int i = 1;
-        while (i <= colCount) {//Column Names
-            cout << setw(10) << " Column" << i;
+    void displayTruthTable(/*Displaying the truth table, Only half complete.*/) {
+        int varCount = charArray.size();
+        
+        //while (i <= colCount) {//Column Names
+        //    cout << setw(10) << " Column" << i;
+        //    i++;
+        //}
+        int i = 0;
+        while (i <= charArray.size()) {
+            cout << setw(8) << charArray[i];
             i++;
         }
+        i = 1;
+        while (i < partCount){
+            cout << setw(5) << equPartArray[i];
+            i++;
+        }
+        cout << setw(10) << equPartArray[0] << endl;
+
         i = 1; cout << endl;
         while (i <= colCount) {//Line Separator
-            cout << setw(11) << "-------";
+            cout << setw(8) << "-------";
             i++;
         }
         i = 0; cout << endl;
         while (i<rowCount) {
             int j = 0;
-            while (j<variableCount){
-                cout << setw(11) << array[j][i];
+            while (j< varCount){
+                cout << setw(8) << array[j][i];
                 j++;
             }
             cout << endl;

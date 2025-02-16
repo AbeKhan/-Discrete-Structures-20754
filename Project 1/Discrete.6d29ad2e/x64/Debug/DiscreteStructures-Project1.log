@@ -1,11 +1,31 @@
 ﻿  SourceVersion1.cpp
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(65,34): warning C4244: '=': conversion from 'wchar_t' to 'char', possible loss of data
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(67,53): warning C4244: 'argument': conversion from 'wchar_t' to 'const _Elem', possible loss of data
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(67,53): warning C4244:         with
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(67,53): warning C4244:         [
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(67,53): warning C4244:             _Elem=char
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(67,53): warning C4244:         ]
   (compiling source file 'SourceVersion1.cpp')
   
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(81,30): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(68,54): warning C4244: 'argument': conversion from 'wchar_t' to 'const _Elem', possible loss of data
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(68,54): warning C4244:         with
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(68,54): warning C4244:         [
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(68,54): warning C4244:             _Elem=char
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(68,54): warning C4244:         ]
   (compiling source file 'SourceVersion1.cpp')
   
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(130,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(140,53): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'SourceVersion1.cpp')
   
-  DiscreteStructures-Project1.vcxproj -> C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 1\x64\Debug\DiscreteStructures-Project1.exe
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(161,30): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'SourceVersion1.cpp')
+  
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(162,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'SourceVersion1.cpp')
+  
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(175,47): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'SourceVersion1.cpp')
+  
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\Proposition.h(189,22): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'SourceVersion1.cpp')
+  
+  DiscreteStructures-Project1.vcxproj -> C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 1\x64\Debug\DiscreteStructures-Project1.exe

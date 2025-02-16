@@ -19,8 +19,7 @@ using namespace std;
 int main() {
 
     //u32string equationTest = U"(𝑝∨𝑞)∧(𝑝∧𝑞)⨁";
-    Proposition equationTest(L"~(𝑝∨𝑞)∧(𝑝∧𝑞)⨁");
-  
+    Proposition equationTest(L"~(p∨q)↔(~p∧~q)");    // 7 Columns
     /*
     Proposition equation1(L"(p∨q)∧(~p∧~q)");
     Proposition equation2(L"(p↔q)→(~p↔~q)");
@@ -29,7 +28,7 @@ int main() {
     */
 
     //equation4 = characterSwap(equation1);
-    Proposition equation1(L"");
+    //Proposition equation1(L"");
     equationTest.displayTruthTable();
     equationTest.fReleaseMemory(); //Not working
 

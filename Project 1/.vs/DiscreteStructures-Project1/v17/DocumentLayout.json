@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\",
+  "WorkspaceRootPath": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D29AD2E-A7C6-4831-BACD-5AB542457882}|DiscreteStructures-Project1.vcxproj|C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6D29AD2E-A7C6-4831-BACD-5AB542457882}|DiscreteStructures-Project1.vcxproj|C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D29AD2E-A7C6-4831-BACD-5AB542457882}|DiscreteStructures-Project1.vcxproj|solutionrelative:Proposition.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D29AD2E-A7C6-4831-BACD-5AB542457882}|DiscreteStructures-Project1.vcxproj|C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\SourceVersion1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{6D29AD2E-A7C6-4831-BACD-5AB542457882}|DiscreteStructures-Project1.vcxproj|C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\SourceVersion1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{6D29AD2E-A7C6-4831-BACD-5AB542457882}|DiscreteStructures-Project1.vcxproj|solutionrelative:SourceVersion1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -28,11 +28,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Proposition.h",
-              "DocumentMoniker": "C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h",
+              "DocumentMoniker": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h",
               "RelativeDocumentMoniker": "Proposition.h",
-              "ToolTip": "C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h",
+              "ToolTip": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h",
               "RelativeToolTip": "Proposition.h",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAAAHwAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK4AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-09T22:35:46.245Z",
               "EditorCaption": ""
@@ -51,7 +51,7 @@
         "Y": 175,
         "Width": 1930,
         "Height": 784,
-        "WindowState": 0
+        "WindowState": 2
       },
       "DocumentGroups": [
         {
@@ -62,11 +62,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "SourceVersion1.cpp",
-              "DocumentMoniker": "C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\SourceVersion1.cpp",
+              "DocumentMoniker": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\SourceVersion1.cpp",
               "RelativeDocumentMoniker": "SourceVersion1.cpp",
-              "ToolTip": "C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\SourceVersion1.cpp",
+              "ToolTip": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\SourceVersion1.cpp",
               "RelativeToolTip": "SourceVersion1.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-09T20:46:35.63Z",
               "EditorCaption": ""
