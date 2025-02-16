@@ -16,7 +16,7 @@ private:
     int partCount;                      //How many parts in the equation ()
     int colCount;                       //Total number of columns in the truth table
     int rowCount;                       //Total number of rows in the truth table
-    int** array;                        //The total size of the Truth Table
+    int** array;                        //The total size of the Truth Table, Also where the answer values are stored
     string charArray;                   //Unique CHARs of variables p, q, r, etc...
     string displayEquation;             //Building the string for display, Idk if this is needed.
     string evaluateEquation;            //Building the string to be evaluated, Idk if this is needed.
@@ -84,7 +84,7 @@ private:
         //cout << displayEquation << endl << evaluateEquation << endl; /*Testing Only*/
         i++;
         }
-        if ((int)equation[0] != 40) {   //This is the final check.
+        if ((int)equation[0] != 40) {   //This is the final check for number of parts.
             partCount++;
         }
 
@@ -125,7 +125,7 @@ private:
         }
     }
 
-    string defineEquationParts(string equPart /*Recursion*/, int count) {
+    string defineEquationParts(string equPart, int count /*Recursion*/) {
         int loopCount = 0;
         bool skip;
         int i = 1;
@@ -133,8 +133,9 @@ private:
         {
             skip = false;
             if (equPart[loopCount] == '(') {        //Down the rabbit trail
-                cout << equPart.substr(loopCount+1) << endl;
+                /*cout << equPart.substr(loopCount+1) << endl;*/     /*Testing Only*/
                 equPartArray[count] = equPartArray[count] + "(" + defineEquationParts(equPart.substr(loopCount + 1), count + i);
+                /*I wonder if I can get the '(' to be apart of the level below string?*/
                 i++;
                 skip = true;
                 loopCount = equPartArray[count].size();
@@ -153,6 +154,69 @@ private:
         return (equPartArray[count]);
     } 
 
+    int evaluateEquation(string equPart, int Column /*Recursion*/) {
+        int loopCount = 0;
+        bool skip;
+        int i, j, k;    i = 1;/*EquaPart & Column*/  j = 1;/*Row*/  k = 1/*Column*/;
+        while (loopCount < equPart.size())
+        {
+            j = 0;
+            while (true)
+            {
+                
+            } 
+            //skip = false;
+            //if (equPart[loopCount] == '(') {        //Down the rabbit trail
+            //    array[][] = defineEquationParts(equPart.substr(loopCount + 1), count + i);
+            //    i++;
+            //    skip = true;
+            //    loopCount = equPartArray[count].size();
+            //}
+            //if (equPart[loopCount] == ')')          //UP the rabbit trail
+            //{
+            //    array[][] = equPartArray[count] + equPart[loopCount];
+            //    return 1;
+            //}
+            //if (skip != true) {                     //Building the rabbit trail
+            //    array[][] = equPartArray[count] + equPart[loopCount];
+            //    loopCount++;
+            //}
+            //cout << equPartArray[count] << endl;    /*Testing Only*/
+
+            loopCount++;
+        }
+        return array[][]; //Default?
+    }
+
+    int evaluateEquation(string equPart) { //str.find(ch);
+        int loopCount = 0;
+        bool tempAnswer;
+
+        while (loopCount < rowCount) {  //Going through each row
+            
+            if (
+                ((int)equPart[loopCount] >= 97 && (int)equPart[loopCount] <= 122)/*a-z*/ || ((int)equPart[loopCount] >= 65 && (int)equPart[loopCount] <= 90)/*A-Z*/) {
+               
+                for (int j = 0; j <= charArray.size(); j++) {  //Checking for unique chars
+                    if (equPart[loopCount] == charArray[j]) {
+                        tempAnswer = array[loopCount][charArray.find(charArray[j])];
+                        cout << charArray[j] << " has value of : " << tempAnswer << endl; /*Testing Only*/
+                        break;
+                    }
+                }
+            }
+
+        }
+
+
+        while (loopCount < equPart.size()) {
+
+        }
+
+        return 1; //IDK
+    }
+
+
 public:
     
     Proposition(wstring equation /*Constructor*/) {
@@ -163,7 +227,6 @@ public:
         array = new int* [rowCount];                    //Defining the size of the array
         buildingArray(colCount, rowCount);              //Building Array - only the variable columns    
         assignVariableValues();
-
         equPartArray = new string[partCount];
         defineEquationParts(displayEquation, 0);
 
@@ -173,7 +236,7 @@ public:
     int fColCount()     {return colCount;}              //Returning number of columns in truth table
     int fPartCount()    {return partCount;}             //Returning number of equation parts ()
     int fValCount()     {return charArray.size();}      //Returning number of unique chars in equation.
-    void fReleaseMemory() {
+    void fReleaseMemory(/*Not working*/) {
         //for (int i = 0; i < 3; ++i) {
         //    delete[] array[i];  // Delete each row
         //}
@@ -199,10 +262,10 @@ public:
         }
         i = 1;
         while (i < partCount){
-            cout << setw(5) << equPartArray[i];
+            cout << setw(8) << equPartArray[i];
             i++;
         }
-        cout << setw(10) << equPartArray[0] << endl;
+        cout << setw(8) << equPartArray[0] << endl;
 
         i = 1; cout << endl;
         while (i <= colCount) {//Line Separator
@@ -212,7 +275,7 @@ public:
         i = 0; cout << endl;
         while (i<rowCount) {
             int j = 0;
-            while (j< varCount){
+            while (j< varCount){ //This will change
                 cout << setw(8) << array[j][i];
                 j++;
             }
@@ -224,3 +287,4 @@ public:
 
 };
 
+ 
