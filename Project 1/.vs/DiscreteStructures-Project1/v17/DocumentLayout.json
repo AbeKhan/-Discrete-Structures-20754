@@ -18,46 +18,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Proposition.h",
-              "DocumentMoniker": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h",
-              "RelativeDocumentMoniker": "Proposition.h",
-              "ToolTip": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h",
-              "RelativeToolTip": "Proposition.h",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAAALQAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-09T22:35:46.245Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "d7c48fe8-5cd4-4815-97d1-608987cd2e1d",
-        "Display": 2,
-        "X": -5,
-        "Y": 175,
-        "Width": 1930,
-        "Height": 784,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -69,6 +35,19 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-09T20:46:35.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Proposition.h",
+              "DocumentMoniker": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h",
+              "RelativeDocumentMoniker": "Proposition.h",
+              "ToolTip": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 1\\Proposition.h",
+              "RelativeToolTip": "Proposition.h",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAJsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-09T22:35:46.245Z",
               "EditorCaption": ""
             }
           ]

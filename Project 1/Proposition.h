@@ -6,10 +6,7 @@
 #include <cmath>
 #include <iomanip>  //This is used for the display/output
 #include <locale>   //Testing for Unicode accepting chars :
-
-
 using namespace std;
-
 class Proposition
 {
 private:
@@ -154,62 +151,94 @@ private:
         return (equPartArray[count]);
     } 
 
-    int evaluateEquation(string equPart, int Column /*Recursion*/) {
+    int evaluateEquationR(string equPart, int count /*Recursion*/) {
         int loopCount = 0;
         bool skip;
-        int i, j, k;    i = 1;/*EquaPart & Column*/  j = 1;/*Row*/  k = 1/*Column*/;
+        int i = 1;
         while (loopCount < equPart.size())
         {
-            j = 0;
-            while (true)
+            skip = false;
+            if (equPart[loopCount] == '(') {        //Down the rabbit trail
+               
+                i++;
+                skip = true;
+                loopCount = equPartArray[count].size();
+            }
+            if (equPart[loopCount] == ')')          //UP the rabbit trail
             {
-                
-            } 
-            //skip = false;
-            //if (equPart[loopCount] == '(') {        //Down the rabbit trail
-            //    array[][] = defineEquationParts(equPart.substr(loopCount + 1), count + i);
-            //    i++;
-            //    skip = true;
-            //    loopCount = equPartArray[count].size();
-            //}
-            //if (equPart[loopCount] == ')')          //UP the rabbit trail
-            //{
-            //    array[][] = equPartArray[count] + equPart[loopCount];
-            //    return 1;
-            //}
-            //if (skip != true) {                     //Building the rabbit trail
-            //    array[][] = equPartArray[count] + equPart[loopCount];
-            //    loopCount++;
-            //}
+                equPartArray[count] = equPartArray[count] + equPart[loopCount];
+                return equPartArray[count];
+            }
+            if (skip != true) {                     //Building the rabbit trail
+                equPartArray[count] = equPartArray[count] + equPart[loopCount];
+                loopCount++;
+            }
             //cout << equPartArray[count] << endl;    /*Testing Only*/
-
-            loopCount++;
         }
-        return array[][]; //Default?
+        return (equPartArray[count]);
     }
 
-    int evaluateEquation(string equPart) { //str.find(ch);
+    int evaluateEquation(string equPart, int count /*Recursion*/) { //str.find(ch);
         int loopCount = 0;
         bool tempAnswer;
+        int leftVariable, rightVariable;
+        char operatorVariable;
 
         while (loopCount < rowCount) {  //Going through each row
-            
-            if (
-                ((int)equPart[loopCount] >= 97 && (int)equPart[loopCount] <= 122)/*a-z*/ || ((int)equPart[loopCount] >= 65 && (int)equPart[loopCount] <= 90)/*A-Z*/) {
-               
+            if (leftVariable == '\0' && (
+                    ((int)equPart[loopCount] >= 97 && (int)equPart[loopCount] <= 122)/*a-z*/ || ((int)equPart[loopCount] >= 65 && (int)equPart[loopCount] <= 90)/*A-Z*/)
+               ){
                 for (int j = 0; j <= charArray.size(); j++) {  //Checking for unique chars
                     if (equPart[loopCount] == charArray[j]) {
-                        tempAnswer = array[loopCount][charArray.find(charArray[j])];
-                        cout << charArray[j] << " has value of : " << tempAnswer << endl; /*Testing Only*/
-                        break;
+                        leftVariable = j;
+                    }
+                }
+                operatorVariable = equPart[loopCount + 1];
+            }
+            if (rightVariable == '\0' && (
+                ((int)equPart[loopCount] >= 97 && (int)equPart[loopCount] <= 122)/*a-z*/ || ((int)equPart[loopCount] >= 65 && (int)equPart[loopCount] <= 90)/*A-Z*/)
+                ) {
+                for (int k = 0; k <= charArray.size(); k++) {  //Checking for unique chars
+                    if (equPart[loopCount] == charArray[k]) {
+                        leftVariable = k;
                     }
                 }
             }
+            if (leftVariable != '\0' && rightVariable != '\0') {
+                switch ((int)operatorVariable)                                   //LogicOperator   DisplayOperator    CodeOperator
+                {
+                case 8743:                                          //  ∧    *    &&
+                    array[loopCount][count] = leftVariable && rightVariable;
+                    break;
+                case 8744:                                          //  V    +    ||
+                    array[loopCount][count] = leftVariable || rightVariable;
+                    break;
+                case 8853: case 10753:                              //  ⨁    ^    XOR
+                    //array[loopCount][count] = leftVariable XOR rightVariable;
+                    break;
+                case 126:
+                case 172:                                           //  ~
+                                                                    //not sure what to put here yet.
+                    break;
+                case 8801:                                          //  ≡    ====
+                    
+                        //not sure what to put here yet.
+                    break;
+                case 8594:                                          //  →    ->
+                    /*displayEquation = displayEquation + "->";
+                    evaluateEquation = evaluateEquation + "<=";*/     //Not Sure
+                    break;
+                case 8596:                                          //  ↔    <->
+                    /*displayEquation = displayEquation + "<->";
+                    evaluateEquation = evaluateEquation + ">=";*/     //Not Sure
+                    break;
+                default:
+                    cout << "No matching operator for " << (int)operatorVariable << " : " << operatorVariable << endl;
+                    break;
+                }
 
-        }
 
-
-        while (loopCount < equPart.size()) {
+            }
 
         }
 
