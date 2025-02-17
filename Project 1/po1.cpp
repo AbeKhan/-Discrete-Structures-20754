@@ -67,7 +67,7 @@ void proposition(int input) {
         equation = "(p+q)*(~p*r)->(p*r)";
         cout << "Check true value for: " << equation << endl;
         cout << setw(8) << "p" << setw(8) << "q" << setw(8) << "r"
-            << setw(10) << "(p->r)" << setw(15) << "((p->r)->q)" << setw(10) << "(q->r)" << setw(15) << "(p->(q->r))" << setw(28) << equation << endl;
+            << setw(10) << "(p+q)" << setw(10) << "(~p*r)" << setw(10) << "(p*r)" << setw(15) << "(p+q)*(~p*r)" << setw(23) << equation << endl;
         for (int i = 0; i <= 1; i++)
         {
             p = i;
