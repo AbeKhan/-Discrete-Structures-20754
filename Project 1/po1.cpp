@@ -1,10 +1,14 @@
+/**
+* Abraham & Justin
+* Discrete Structures
+* Group Project 1
+* 2025-02-16
+*/
 #include <iostream>
 #include <cmath>
 #include <string>
 #include <iomanip>
-
 using namespace std;
-
 void proposition(int input);                             // Forward declaration of proposition
 string tableEvaluation(int trueCount, int rowCount);     // conclusion of expression
 
@@ -24,8 +28,7 @@ void proposition(int input) {
     bool p, q, r, result;
     string equation; int trueCount = 0;
     cout << endl;
-    switch (input)
-    {
+    switch (input) {
     case 1:
         //(p ⋁ q) ⋀ (¬p ⋀ ¬q)
         equation = "(p+q)*(~p*~q)";
@@ -126,7 +129,6 @@ void proposition(int input) {
         break;
     }
 }
-
 string tableEvaluation(int trueCount, int rowCount) {
     if (trueCount == rowCount) {
         return "tautology.";
