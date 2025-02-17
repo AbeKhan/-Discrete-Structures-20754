@@ -5,66 +5,69 @@
 
 using namespace std;
 
-void proposition(int input);
-void printTruthTable(int input, bool p, bool q, bool r);
+void proposition(int input);                             // Forward declaration of proposition
+string tableEvaluation(int trueCount, int rowCount);     // conclusion of expression
 
-int main()
-{
+int main() {
     int input;
     cout << "Which expression would you like to see?" << endl;
     cout << "1: (p ⋁ q) ⋀ (¬p ⋀ ¬q)" << endl;
     cout << "2: (p ↔ q) → (¬p ↔ ¬q)" << endl;
     cout << "3: (p ⋁ q) ⋀ (¬p ⋀ r) → (p ⋀ r)" << endl;
-    cout << "4: ((p → r) → q) ↔ (p → (q → r))" << endl;
-
+    cout << "4: ((p → r) → q) ↔ (p → (q → r))" << endl; // Fixed extra parenthesis
     cin >> input;
-
-    proposition(input);
-
+    proposition(input); // Call the function to evaluate the expression
     return 0;
 }
 
-void proposition(int input)
-{
+void proposition(int input) {
     bool p, q, r, result;
-
+    string equation; int trueCount = 0;
+    cout << endl;
     switch (input)
     {
     case 1:
         //(p ⋁ q) ⋀ (¬p ⋀ ¬q)
-        for (int i = 0; i <= 1; i++)
-        {
+        equation = "(p+q)*(~p*~q)";
+        cout << "Check true value for: " << equation << endl;
+        cout << setw(8) << "p" << setw(8) << "q" << setw(10) << "(p+q)" << setw(10) << "(~p*~q)" << setw(15) << equation << endl;
+        for (int i = 0; i <= 1; i++) {
             p = i;
-            for (int ii = 0; ii <= 1; ii++)
-            {
+            for (int ii = 0; ii <= 1; ii++) {
                 q = ii;
-                result = (p || q) && (!p && !q);
-
-                cout << "This is the result: " << result << endl;
+                result = (p || q) && (!p && !q); // Changed '==' to '='
+                if (result == 1) { trueCount++; }
+                cout << setw(8) << p << setw(8) << q << setw(8) << (p || q) << setw(9) << (!p && !q) << setw(12) << result << endl;
             }
         }
+        cout << "There are " << trueCount << " true cases." << endl;
+        cout << equation << " is a " << tableEvaluation(trueCount, 4) << endl;
         break;
     case 2:
         //(p ↔ q) → (¬p ↔ ¬q)
-        for (int i = 0; i <= 1; i++)
-        {
+        equation = "(p<->q)->(~p<->~q)";
+        cout << "Check true value for: " << equation << endl;
+        cout << setw(8) << "p" << setw(8) << "q" << setw(10) << "(p<->q)" << setw(10) << "(~p<->~q)" << setw(20) << equation << endl;
+        for (int i = 0; i <= 1; i++) {
             p = i;
-            for (int ii = 0; ii <= 1; ii++)
-            {
+            for (int ii = 0; ii <= 1; ii++) {
                 q = ii;
                 bool p_iff_q = (p == q);
                 bool not_p_iff_not_q = (!p == !q);
-                result = !(p_iff_q) || not_p_iff_not_q;
-
-                cout << "Value of P: " << p << " Value of Q: " << q << endl;
-                cout << "Value of p_iff_q: " << p_iff_q << " not_p_iff_not_q: " << not_p_iff_not_q << endl;
-                cout << "This is the result: " << result << endl
-                     << endl;
+                result = !p_iff_q || not_p_iff_not_q;
+                if (result == 1) { trueCount++; }
+                cout << setw(8) << p << setw(8) << q << setw(7) << p_iff_q << setw(9) << not_p_iff_not_q << setw(15) << result << endl;
             }
         }
+        cout << "There are " << trueCount << " true cases." << endl;
+        cout << equation << " is a " << tableEvaluation(trueCount, 4) << endl;
         break;
     case 3:
         //(p ⋁ q) ⋀ (¬p ⋀ r) → (p ⋀ r)
+        equation = "(p+q)*(~p*r)->(p*r)";
+        cout << "Check true value for: " << equation << endl;
+        cout << setw(8) << "p" << setw(8) << "q" << setw(8) << "r"
+            << setw(10) << "(p+q)" << setw(10) << "(~p*r)" << setw(10) << "(p*r)" << setw(10) << "(p+q)*(~p*r)" << setw(20) << equation << endl;
         for (int i = 0; i <= 1; i++)
         {
             p = i;
@@ -81,23 +84,25 @@ void proposition(int input)
                     bool part2 = (p && r);
 
                     result = !(part1) || part2;
-
-                    cout << "This is the result: " << result << endl;
+                    if (result == 1) { trueCount++; }
+                    cout << setw(8) << p << setw(8) << q << setw(8) << r
+                        << setw(8) << p_or_q << setw(12) << notp_and_r << setw(13) << part1 << setw(12) << part2 << setw(21) << result << endl;
                 }
             }
         }
+        cout << "There are " << trueCount << " true cases." << endl;
+        cout << equation << " is a " << tableEvaluation(trueCount, 4) << endl;
         break;
-
     case 4:
-        //((p → r) → q) ↔ (p → (q → r))
-        for (int i = 0; i <= 1; i++)
-        {
+        equation = "((p->r)->q)<->(p->(q->r))";
+        cout << "Check true value for: " << equation << endl;
+        cout << setw(8) << "p" << setw(8) << "q" << setw(8) << "r"
+            << setw(10) << "(p->r)" << setw(15) << "((p->r)->q)" << setw(10) << "(q->r)" << setw(15) << "(p->(q->r))" << setw(28) << equation << endl;
+        for (int i = 0; i <= 1; i++) {
             p = i;
-            for (int ii = 0; ii <= 1; ii++)
-            {
+            for (int ii = 0; ii <= 1; ii++) {
                 q = ii;
-                for (int iii = 0; iii <= 1; iii++)
-                {
+                for (int iii = 0; iii <= 1; iii++) {
                     r = iii;
 
                     // Evaluate part 1: ((p → r) → q)
@@ -110,13 +115,27 @@ void proposition(int input)
 
                     // Equivalence check
                     result = (part1 == part2);
-
-                    //cout << "part1: " << part1 << " part2: " << part2 << endl;
-                    cout << "p: " << p << " q: " << q << " r: " << r << endl;
-                    cout << "This is the result: " << result << endl;
+                    if (result == 1) { trueCount++; }
+                    cout << setw(8) << p << setw(8) << q << setw(8) << r
+                        << setw(8) << if_p_then_r << setw(12) << part1 << setw(13) << if_q_then_r << setw(12) << part2 << setw(21) << result << endl;
                 }
             }
         }
+        cout << "There are " << trueCount << " true cases." << endl;
+        cout << equation << " is a " << tableEvaluation(trueCount, 4) << endl;
         break;
+    }
+}
+
+string tableEvaluation(int trueCount, int rowCount) {
+    if (trueCount == rowCount) {
+        return "tautology.";
+    }
+    else if (trueCount == 0)
+    {
+        return "contradiction.";
+    }
+    else {
+        return "contingency.";
     }
 }
