@@ -86,7 +86,7 @@ void proposition(int input) {
                     result = !(part1) || part2;
                     if (result == 1) { trueCount++; }
                     cout << setw(8) << p << setw(8) << q << setw(8) << r
-                        << setw(8) << if_p_then_r << setw(12) << part1 << setw(13) << if_q_then_r << setw(12) << part2 << setw(21) << result << endl;
+                        << setw(8) << p_or_q << setw(10) << notp_and_r << setw(10) << part1 << setw(11) << part2 << setw(18) << result << endl;
                 }
             }
         }
