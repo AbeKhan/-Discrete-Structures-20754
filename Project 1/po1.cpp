@@ -2,6 +2,7 @@
 * Abraham & Justin
 * Discrete Structures
 * Group Project 1
+* Group #13
 * 2025-02-16
 */
 #include <iostream>
@@ -18,7 +19,7 @@ int main() {
     cout << "1: (p ⋁ q) ⋀ (¬p ⋀ ¬q)" << endl;
     cout << "2: (p ↔ q) → (¬p ↔ ¬q)" << endl;
     cout << "3: (p ⋁ q) ⋀ (¬p ⋀ r) → (p ⋀ r)" << endl;
-    cout << "4: ((p → r) → q) ↔ (p → (q → r))" << endl; // Fixed extra parenthesis
+    cout << "4: ((p → r) → q) ↔ (p → (q → r))" << endl;
     cin >> input;
     proposition(input); // Call the function to evaluate the expression
     return 0;
@@ -38,7 +39,7 @@ void proposition(int input) {
             p = i;
             for (int ii = 0; ii <= 1; ii++) {
                 q = ii;
-                result = (p || q) && (!p && !q); // Changed '==' to '='
+                result = (p || q) && (!p && !q); 
                 if (result == 1) { trueCount++; }
                 cout << setw(8) << p << setw(8) << q << setw(8) << (p || q) << setw(9) << (!p && !q) << setw(12) << result << endl;
             }
@@ -83,6 +84,7 @@ void proposition(int input) {
 
                     bool p_or_q = (p || q);
                     bool notp_and_r = (!p && r);
+                    //(p ⋁ q) ⋀ (¬p ⋀ r)
                     bool part1 = p_or_q && notp_and_r;
                     bool part2 = (p && r);
 
