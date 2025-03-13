@@ -1,0 +1,17 @@
+# Define the default target
+all: p02
+
+# Define the object variable
+obj = p02.o Set.o
+
+# Define the rule that creates executable file p02
+p02: ${obj}
+	g++ -o p02 ${obj}
+
+# Compile p02.cpp
+p02.o: p02.cpp Set.h
+	g++ -g -c p02.cpp
+
+# Compile Set.cpp
+Set.o: Set.cpp Set.h
+	g++ -g -c Set.cpp
