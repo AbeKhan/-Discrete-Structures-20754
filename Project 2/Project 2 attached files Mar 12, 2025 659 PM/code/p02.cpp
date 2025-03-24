@@ -1,7 +1,7 @@
 // TODO: add your information for this project
 // ----------------------------------------------
-// Author(s):   John Smith
-// Email(s):    xxx@uco.edu
+// Author(s):   Justin Stevenson        Abraham Khan
+// Email(s):    jstevenson19@uco.edu    akhan33@uco.edu
 // ----------------------------------------------
 
 
