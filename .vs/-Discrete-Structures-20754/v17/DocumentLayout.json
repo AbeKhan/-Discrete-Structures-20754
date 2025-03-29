@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\p02.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\p02.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "p02.cpp",
+              "DocumentMoniker": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\p02.cpp",
+              "RelativeDocumentMoniker": "Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\p02.cpp",
+              "ToolTip": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\p02.cpp",
+              "RelativeToolTip": "Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\p02.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-29T00:15:23.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Set.cpp",
+              "DocumentMoniker": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.cpp",
+              "RelativeDocumentMoniker": "Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.cpp",
+              "ToolTip": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.cpp",
+              "RelativeToolTip": "Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-29T00:15:34.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Set.h",
+              "DocumentMoniker": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.h",
+              "RelativeDocumentMoniker": "Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.h",
+              "ToolTip": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.h",
+              "RelativeToolTip": "Project 2\\Project 2 attached files Mar 12, 2025 659 PM\\code\\Set.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-29T00:15:35.383Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

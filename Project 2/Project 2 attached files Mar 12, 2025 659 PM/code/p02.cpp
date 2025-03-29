@@ -3,7 +3,7 @@
 // Author(s):   Abraham Khan        &&      Justin Stevenson
 // Email(s):    Akhan33@uco.edu     &&      Jstevenson19@uco.edu
 // ----------------------------------------------
-
+//GitHub Version
 
 #include <string>
 #include <iostream>
@@ -155,8 +155,8 @@ int main(int argc, char** argv[] ) {
         /*for (int i = 0; i < n_paramters; i++) {
             strcpy_s(fn[i], argv[i+1]);
         }*/
-        strcpy_s(fn[0], "CustomInput1.dat");
-        strcpy_s(fn[1], "CustomInput2.dat");
+        strcpy_s(fn[0], "input1.dat");
+        strcpy_s(fn[1], "input2.dat");
         strcpy_s(fn[2], "output.dat");
 
         ifstream i1(fn[0]);
