@@ -3,7 +3,7 @@
 // Author(s):   Abraham Khan        &&      Justin Stevenson
 // Email(s):    Akhan33@uco.edu     &&      Jstevenson19@uco.edu
 // ----------------------------------------------
-//GitHub Version
+
 
 #include <string>
 #include <iostream>
@@ -64,7 +64,7 @@ void get_subsets(Set &s1, ostream& o) {
     //int count = pow(2, s1.sizeCount());
     int count = 8;
     // Complete: get all the subsets of the input set and print the result
-    subSetResult.print(o, "Subsets of A: \n {", 1);
+    subSetResult.print(o, "Subsets of A: \n", 0);
 
     if (count < 2)
         o << "There is " << count << " subset of A." << endl;
@@ -135,29 +135,26 @@ void manage_p02(istream& i1, istream& i2, ostream& o) {
  * argv[2] is for the path to the input file for set B
  * argv[3] is for the path to the output file 
  */
-int main(int argc, char** argv[] ) {
+int main(int argc, char* argv[] ) {
     const int n_paramters = 3;
-    argc = 3;
-    const char* argvCustom[] = {"CustomInput1.dat", "CustomInput2.dat" ,"CustomInput1.dat"};
-
-
+    
     try
     {
         char fn[n_paramters][MAX_FILE_LENGTH]; // file names for input and output
-        
 
         // If there are not proper amount of parameters from command line
-        /*if (argc != n_paramters + 1) {
-		    throw CommandLineException(n_paramters, argc - 1);
-        }*/
-
-        // copy necessary command line parameters
-        /*for (int i = 0; i < n_paramters; i++) {
-            strcpy_s(fn[i], argv[i+1]);
-        }*/
-        strcpy_s(fn[0], "input1.dat");
-        strcpy_s(fn[1], "input2.dat");
-        strcpy_s(fn[2], "output.dat");
+        if (argc != n_paramters + 1) {
+            //throw CommandLineException(n_paramters, argc - 1);
+            strcpy_s(fn[0], "input1.dat");
+            strcpy_s(fn[1], "input2.dat");
+            strcpy_s(fn[2], "output.dat");
+        }
+        else {
+            // copy necessary command line parameters
+            for (int i = 0; i < n_paramters; i++) {
+                //strcpy(fn[i], argv[i + 1]);
+            }
+        }
 
         ifstream i1(fn[0]);
         ifstream i2(fn[1]);

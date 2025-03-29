@@ -82,15 +82,15 @@ void Set::print(ostream& o, const char* msg) {
 }
 /*Custom Overloads ----------------------------------------------------------------------------------------*/
 void Set::print(ostream& o, const char* msg, int columnCount) {
-    int counter = 0;
+    int counter = 1;
     o << msg;
     for (int idx = 0; idx < size; idx++) {
-        if (idx > 0) {
+        o << elements[idx];
+        if (idx >= 0 && idx < size-1) {
             o << ",";
         }
-        o << elements[idx];
-        if (counter == columnCount) {
-            counter = 0;
+        if (counter >= columnCount && idx < size - 1) {
+            counter = 1;
             o << "\n";
         }
         else
@@ -98,7 +98,12 @@ void Set::print(ostream& o, const char* msg, int columnCount) {
             counter++;
         }
     }
-    o << "}" << endl;
+    
+    if (columnCount > 0) {
+        o << "}" << endl;
+    }else{
+        o << endl;
+    }
 }
 
 int Set::sizeCount(/*Return 'Size' privateVariable*/) {return size;}
@@ -114,21 +119,21 @@ void Set::insert(Set& object /*Inserting Subset*/) {
     string buildingString;
     for (int i = 0; i < object.sizeCount(); i++) {
         if (object.sizeCount()==1) {
-            buildingString = object.find(1);
+            buildingString = object.find(i);
             continue;
         }
         buildingString = buildingString + "," + object.find(1);
     }
-    insert(buildingString);
+    insert("{" + buildingString + "}");
 }
 
-void Set::print(string msg /*Custom Testing Only*/) {
-    cout << msg;
-    for (int idx = 0; idx < size; idx++) {
-        if (idx > 0) {
-            cout << ",";
-        }
-        cout << elements[idx];
-    }
-    cout << "}\n" << endl;
-}
+//void Set::print(string msg /*Custom Testing Only*/) {
+//    cout << msg;
+//    for (int idx = 0; idx < size; idx++) {
+//        if (idx > 0) {
+//            cout << ",";
+//        }
+//        cout << elements[idx];
+//    }
+//    cout << "}\n" << endl;
+//}
