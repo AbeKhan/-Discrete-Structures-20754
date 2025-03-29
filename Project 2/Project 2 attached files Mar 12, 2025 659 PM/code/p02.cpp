@@ -65,7 +65,7 @@ void get_subsets(Set &s1, ostream &o)
     subSet8.insert(s1.find(0) + "," + s1.find(1) + "," + s1.find(2));
     subSetResult.insert(subSet8);
     // int count = pow(2, s1.sizeCount());
-    int count = 8;
+    int count = subSetResult.sizeCount();
     // Complete: get all the subsets of the input set and print the result
     subSetResult.print(o, "Subsets of A: \n", 0);
 
