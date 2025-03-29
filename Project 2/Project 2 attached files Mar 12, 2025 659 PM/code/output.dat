@@ -1,12 +1,24 @@
 A = {123,345,543}
 B = {abcd,john,Smith,codecodecode}
 A X B = {
-(123,abcd),(123,john),(123,Smith),(123,codecodecode),(345,abcd)
-,(345,john),(345,Smith),(345,codecodecode),(543,abcd),(543,john)
-,(543,Smith),(543,codecodecode)}
+(123,abcd),(123,john),(123,Smith),(123,codecodecode),
+(345,abcd),(345,john),(345,Smith),(345,codecodecode),
+(543,abcd),(543,john),(543,Smith),(543,codecodecode)}
 There are 12 elements in the Cartesian Product.
 --------------------------------
 A={123,345,543}
 Subsets of A: 
- {}
-test
+{},
+{123},
+{345},
+{543},
+{123,345},
+{123,543},
+{345,543},
+{123,345,543}
+There are 8 subsets of A.
+--------------------------------
+A = {123,345,543}
+B = {abcd,john,Smith,codecodecode}
+A ∩ B = {}
+--------------------------------
