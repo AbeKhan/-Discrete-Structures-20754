@@ -24,6 +24,14 @@ class Set
     void insert(string v);    // Insert a single element to this set
     void scan(istream& i);    // Read the elements from a input stream
     void print(ostream& o, const char* msg);   // Print all the elements of this set
+
+    /*Custom Overloads ----------------------------------------------------------------------------------------*/
+    void print(string msg); //Custom
+    void print(ostream& o, const char* msg, int columnCount);
+    int sizeCount();
+    string find(int v);
+    void insert(Set& object);
+
 };
 
 
