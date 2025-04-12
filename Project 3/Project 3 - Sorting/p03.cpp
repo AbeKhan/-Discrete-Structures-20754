@@ -85,6 +85,15 @@ void PrintResult(int* arr, ostream& o1, ostream& o2, int size, double duration) 
 /* Your implementation of the insertion sort. */
 void MyInsertionSort(int* arr, int size) {
   /*** TODO: put your code here ***/
+    for (int i = size-1; i < 0; i--) { //back of the array
+        
+        for (int j = 0; j < size; j++) { //looping through array front -> back
+            if (arr[i] < arr[j]) {
+                //insert array
+            }
+        }
+
+    }
 }
 
 /* Your implementation of the binary insertion sort. */
@@ -97,8 +106,8 @@ void MyImprovedSort(int* arr, int size) {
  * The input list is generated into the o1
  * The sorted list using algorithm 1 is stored into o2
  * The sorted list using algorithm 2 is stored into o3
- * The time used for eacn run of algorithm 1 is stored into o4
- * The time used for each run of algoirhtm 2 is stored into o5
+ * The time used for each run of algorithm 1 is stored into o4
+ * The time used for each run of algorithm 2 is stored into o5
  */
 void P03Manager(ostream& o1, ostream& o2, ostream& o3, ostream& o4, ostream& o5) {
   // integer size is used to control the size of the list for sorting
@@ -113,7 +122,7 @@ void P03Manager(ostream& o1, ostream& o2, ostream& o3, ostream& o4, ostream& o5)
     // we need to get the average time for performance evaluation
     // to get this average,we need to have multiple runs
     for (int i = 0; i < 20; i++) {
-      // gererate the arrays randomly
+      // generate the arrays randomly
       GenerateArray(arr1, arr2, size);
       PrintArray(arr1, size, o1);
 
