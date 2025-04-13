@@ -82,24 +82,47 @@ void PrintResult(int* arr, ostream& o1, ostream& o2, int size, double duration) 
   o2 << duration << endl;
 }
 
+
+int arrayInOrder(int* arr, int size) { /*May not need this*/
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > arr[i + 1]) {
+            return 0;
+        }
+    }
+    cout << "Pass \n";
+    return 1;
+}
+
+
 /* Your implementation of the insertion sort. */
 void MyInsertionSort(int* arr, int size) {
-  /*** TODO: put your code here ***/
-    for (int i = size-1; i < 0; i--) { //back of the array
-        
-        for (int j = 0; j < size; j++) { //looping through array front -> back
-            if (arr[i] < arr[j]) {
-                //insert array
+  /*** Complete: put your code here ***/
+    int lastHold; 
+    for (int lastPostion = size-1; lastPostion >= 0; lastPostion--) { //back of the array
+        for (int startPostion = 0; startPostion < size; startPostion++) { //looping through array front -> back
+            if (arr[lastPostion] <= arr[startPostion]) {
+                lastHold = arr[lastPostion];
+                arr[lastPostion] = arr[startPostion];
+                arr[startPostion] = lastHold;
             }
         }
 
     }
+    int tempHold = arr[0];
+    for (int i = 0; i < size; i++) {
+        arr[i] = arr[i + 1];
+    }
+    arr[size - 1] = tempHold;
+    cout << arr[0] << endl;
+    arrayInOrder(arr,size);
 }
 
 /* Your implementation of the binary insertion sort. */
 void MyImprovedSort(int* arr, int size) {
   /*** TODO: put your code here ***/
 }
+
+
 
 /*
  * ostream references can match the command line arguments
