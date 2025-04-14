@@ -112,45 +112,46 @@ void MyInsertionSort(int* arr, int size) {
 /* Your implementation of the binary insertion sort. */
 void MyImprovedSort(int* arr, int size) {
   /*** TODO: put your code here ***/
-    int low, high;
-    int mid;
-    vector<int> vec(size);    
+    int low, mid = 0, high;
+    int vecCount = 0; 
+    vector<int> vec;    
     
     for (int i = 0; i < size; i++) {
         low = 0, high = vec.size();
         while (high - low > 1) {
             mid = (high + low) / 2;
             if (vec[mid] < arr[i]) {
-                /*if (arr[mid] = arr[i]) {
-
-                }*/
+                if (vec[mid] = arr[i]) {
+                    break;
+                }
                 low = mid + 1;
             }
             else {
                 high = mid;
             }
         }
-        vec.insert(vec.begin() + vec[mid], arr[i]);
-        cout << vec[mid] << endl;
+        //vec[mid] = arr[i];
+        vecCount++; //Cant use vec.size() because it counts nulls, Cant let vec grow because it compounds growth.
+        vec.resize(vecCount);
+        vec.insert(vec.begin() + mid, arr[i]);
+        //if(mid==0){//Begining
+        //    vec.insert(vec.begin(), arr[i]);
+        //    //continue;
+        //}
+        //if (mid == vecCount-1) {
+        //    vec.push_back(arr[i]);
+        //}
+        //else {
+        //    vec.insert(vec.begin() + mid, arr[i]);
+        //}        
 
+    }
+
+    for (int i = 0; i < 10; i++) {
+        cout << vec[i] << endl;
     }
     copy(vec.begin(), vec.end(), arr);
     
-    //if (arr[low] == searchingFor) {
-    //    //cout << "Found"	<< " At Index " << low << endl;
-    //    /*return result = low;*/
-    //}
-    //else {
-    //    
-    //    if (arr[high] == searchingFor) {
-    //        cout << "Found" << " At Index " << high << endl;
-    //        /*return result = high;*/
-    //    }
-    //    else {
-    //        cout << "Not Found" << endl;
-    //    }
-    //}
-    /*return result;*/
 }
 
 
