@@ -13,6 +13,8 @@
 #include <cstring>
 #include <time.h>
 
+#include <vector>
+
 //using std::cout, std::cin, std::endl;
 //using std::string;
 //using std::istream, std::ostream, std::ofstream;
@@ -83,21 +85,11 @@ void PrintResult(int* arr, ostream& o1, ostream& o2, int size, double duration) 
 }
 
 
-int arrayInOrder(int* arr, int size) { /*May not need this*/
-    for (int i = 0; i < size; i++) {
-        if (arr[i] > arr[i + 1]) {
-            return 0;
-        }
-    }
-    cout << "Pass \n";
-    return 1;
-}
-
-
 /* Your implementation of the insertion sort. */
 void MyInsertionSort(int* arr, int size) {
   /*** Complete: put your code here ***/
     int lastHold; 
+
     for (int lastPostion = size-1; lastPostion >= 0; lastPostion--) { //back of the array
         for (int startPostion = 0; startPostion < size; startPostion++) { //looping through array front -> back
             if (arr[lastPostion] <= arr[startPostion]) {
@@ -114,12 +106,51 @@ void MyInsertionSort(int* arr, int size) {
     }
     arr[size - 1] = tempHold;
     cout << arr[0] << endl;
-    arrayInOrder(arr,size);
+
 }
 
 /* Your implementation of the binary insertion sort. */
 void MyImprovedSort(int* arr, int size) {
   /*** TODO: put your code here ***/
+    int low, high;
+    int mid;
+    vector<int> vec(size);    
+    
+    for (int i = 0; i < size; i++) {
+        low = 0, high = vec.size();
+        while (high - low > 1) {
+            mid = (high + low) / 2;
+            if (vec[mid] < arr[i]) {
+                /*if (arr[mid] = arr[i]) {
+
+                }*/
+                low = mid + 1;
+            }
+            else {
+                high = mid;
+            }
+        }
+        vec.insert(vec.begin() + vec[mid], arr[i]);
+        cout << vec[mid] << endl;
+
+    }
+    copy(vec.begin(), vec.end(), arr);
+    
+    //if (arr[low] == searchingFor) {
+    //    //cout << "Found"	<< " At Index " << low << endl;
+    //    /*return result = low;*/
+    //}
+    //else {
+    //    
+    //    if (arr[high] == searchingFor) {
+    //        cout << "Found" << " At Index " << high << endl;
+    //        /*return result = high;*/
+    //    }
+    //    else {
+    //        cout << "Not Found" << endl;
+    //    }
+    //}
+    /*return result;*/
 }
 
 
@@ -144,7 +175,7 @@ void P03Manager(ostream& o1, ostream& o2, ostream& o3, ostream& o4, ostream& o5)
     // since the list is randomly generated, the time used would differ
     // we need to get the average time for performance evaluation
     // to get this average,we need to have multiple runs
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 1; i++) { /*Need to chnage*/
       // generate the arrays randomly
       GenerateArray(arr1, arr2, size);
       PrintArray(arr1, size, o1);
