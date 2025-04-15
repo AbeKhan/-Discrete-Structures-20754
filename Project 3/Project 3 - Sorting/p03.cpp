@@ -98,7 +98,6 @@ void MyInsertionSort(int* arr, int size) {
                 arr[startPostion] = lastHold;
             }
         }
-
     }
     int tempHold = arr[0];
     for (int i = 0; i < size; i++) {
@@ -119,12 +118,12 @@ void MyImprovedSort(int* arr, int size) {
     for (int i = 0; i < size; i++) {
         low = 0, high = vec.size();
         while (high - low > 1) {
-            mid = (high + low) / 2;
-            if (vec[mid] < arr[i]) {
-                if (vec[mid] = arr[i]) {
+            mid = floor((high + low) / 2);
+            if (arr[i] > vec[mid]) {
+                /*if (vec[mid] == arr[i]) {
                     break;
-                }
-                low = mid + 1;
+                }*/
+                low = mid;
             }
             else {
                 high = mid;
@@ -134,6 +133,11 @@ void MyImprovedSort(int* arr, int size) {
         vecCount++; //Cant use vec.size() because it counts nulls, Cant let vec grow because it compounds growth.
         vec.resize(vecCount);
         vec.insert(vec.begin() + mid, arr[i]);
+        for (int i = 0; i < 10 && i < vecCount; i++) {
+            cout << vec[i] << " : ";
+
+        } cout << endl;
+
         //if(mid==0){//Begining
         //    vec.insert(vec.begin(), arr[i]);
         //    //continue;
@@ -147,9 +151,7 @@ void MyImprovedSort(int* arr, int size) {
 
     }
 
-    for (int i = 0; i < 10; i++) {
-        cout << vec[i] << endl;
-    }
+    
     copy(vec.begin(), vec.end(), arr);
     
 }

@@ -1,4 +1,5 @@
 ﻿  p03.cpp
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 3\Project 3 - Sorting\p03.cpp(120,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 3\Project 3 - Sorting\p03.cpp(210,17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Project 3 - Sorting.vcxproj -> C:\Users\justi\OneDrive\Documents\GitHub\-Discrete-Structures-20754\Project 3\Project 3 - Sorting\x64\Debug\Project 3 - Sorting.exe
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 3\Project 3 - Sorting\p03.cpp(119,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 3\Project 3 - Sorting\p03.cpp(121,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 3\Project 3 - Sorting\p03.cpp(212,17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Project 3 - Sorting.vcxproj -> C:\Users\Justin&Sam\Documents\GitHub\-Discrete-Structures-20754\Project 3\Project 3 - Sorting\x64\Debug\Project 3 - Sorting.exe

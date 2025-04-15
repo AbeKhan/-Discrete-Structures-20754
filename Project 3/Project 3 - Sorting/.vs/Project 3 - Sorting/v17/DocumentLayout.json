@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 3\\Project 3 - Sorting\\",
+  "WorkspaceRootPath": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 3\\Project 3 - Sorting\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5710F7D3-6EB7-4430-9B60-4EE1B421BDCA}|Project 3 - Sorting.vcxproj|C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 3\\Project 3 - Sorting\\p03.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5710F7D3-6EB7-4430-9B60-4EE1B421BDCA}|Project 3 - Sorting.vcxproj|C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 3\\Project 3 - Sorting\\p03.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5710F7D3-6EB7-4430-9B60-4EE1B421BDCA}|Project 3 - Sorting.vcxproj|solutionrelative:p03.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -14,21 +14,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "p03.cpp",
-              "DocumentMoniker": "C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 3\\Project 3 - Sorting\\p03.cpp",
+              "DocumentMoniker": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 3\\Project 3 - Sorting\\p03.cpp",
               "RelativeDocumentMoniker": "p03.cpp",
-              "ToolTip": "C:\\Users\\justi\\OneDrive\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 3\\Project 3 - Sorting\\p03.cpp",
+              "ToolTip": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 3\\Project 3 - Sorting\\p03.cpp",
               "RelativeToolTip": "p03.cpp",
-              "ViewState": "AgIAAHUAAAAAAMAld38bwJIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAQwHkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-10T00:40:48.705Z",
               "EditorCaption": ""
