@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 4 Bonus\\Project 4 Bonus\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{26DE460F-0079-4203-B927-F4DA60DE29F5}|Project 4 Bonus.vcxproj|C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 4 Bonus\\Project 4 Bonus\\Project4Bonus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{26DE460F-0079-4203-B927-F4DA60DE29F5}|Project 4 Bonus.vcxproj|solutionrelative:Project4Bonus.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Project4Bonus.cpp",
+              "DocumentMoniker": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 4 Bonus\\Project 4 Bonus\\Project4Bonus.cpp",
+              "RelativeDocumentMoniker": "Project4Bonus.cpp",
+              "ToolTip": "C:\\Users\\Justin\u0026Sam\\Documents\\GitHub\\-Discrete-Structures-20754\\Project 4 Bonus\\Project 4 Bonus\\Project4Bonus.cpp",
+              "RelativeToolTip": "Project4Bonus.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwCgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-27T16:40:26.992Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
