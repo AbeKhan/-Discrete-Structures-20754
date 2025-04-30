@@ -55,75 +55,71 @@ void solveCongruence(int a, int b, int m) {
 int main(int argc, char* argv[]) {
     int a, b, m, choice;
 
-    // cout << "Choose operation:\n";
-    // cout << "1. Compute GCD\n";
-    // cout << "2. Find modular inverse\n";
-    // cout << "3. Solve linear congruence\n";
-    // cout << "Enter choice: ";
+     if (argc > 1) {
+         choice = atoi(argv[1]);
+         if (choice == 1) {
+             // cout << "Enter two positive integers: ";
+              //cin >> a >> b;
+             a = atoi(argv[2]);
+             b = atoi(argv[3]);
+             cout << "gcd(" << a << ", " << b << ") = " << gcd(a, b) << endl;
+         }
+         else if (choice == 2) {
+             // cout << "Enter integer a and modulus m: ";
+              //cin >> a >> m;
+             a = atoi(argv[2]);
+             m = atoi(argv[3]);
+             //cout << "Modular inverse of " << a << " mod " << m << " is " << modInverse(a, m) << endl;
+             cout << modInverse(a, m) << " is the inverse of " << a << " modulo " << m << endl;
+         }
+         else if (choice == 3) {
+             // cout << "Enter integers a, b and modulus m: ";
+             // cin >> a >> b >> m;
 
-    // cout << "Enter choice: ";
-    // cin >> choice;
-    //     if (choice == 1) {
-    //         cout << "Enter two positive integers: ";
-    //         cin >> a >> b;
-    //         cout << "GCD(" << a << ", " << b << ") = " << gcd(a, b) << endl;
-    //     }
-    //     else if (choice == 2) {
-    //         cout << "Enter integer a and modulus m: ";
-    //         cin >> a >> m;
-    //         //cout << "Modular inverse of " << a << " mod " << m << " is " << modInverse(a, m) << endl;
-    //         cout << modInverse(a, m) << " is the inverse of " << a << " modulo " << m << endl;
-    //     }
-    //     else if (choice == 3) {
-    //         cout << "Enter integers a, b and modulus m: ";
-    //         cin >> a >> b >> m;
-    //         solveCongruence(a, b, m);
-    //     }
-    //     else {
-    //         cout << "Invalid choice!\n";
-    //     }
-
-    /*
-    This is to test the command line arguments.
-    Uncomment the following lines to see the arguments passed to the program.
-    
-     cout << "Number of arguments: " << argc << endl;
-     for (int i = 0; i < argc; i++) {
-         cout << "Argument " << i << ": " << argv[i] << endl;
+             a = atoi(argv[2]);
+             b = atoi(argv[3]);
+             m = atoi(argv[4]);
+             solveCongruence(a, b, m);
+         }
+         else {
+             cout << "Invalid choice!\n";
+         }
      }
-    */
+     else {
+         cout << "Choose operation:\n";
+         cout << "1. Compute GCD\n";
+         cout << "2. Find modular inverse\n";
+         cout << "3. Solve linear congruence\n";
+         cout << "Enter choice: ";
+         cin >> choice;
+             if (choice == 1) {
+                 cout << "Enter two positive integers: ";
+                 cin >> a >> b;
+                 cout << "GCD(" << a << ", " << b << ") = " << gcd(a, b) << endl;
+             }
+             else if (choice == 2) {
+                 cout << "Enter integer a and modulus m: ";
+                 cin >> a >> m;
+                 cout << modInverse(a, m) << " is the inverse of " << a << " modulo " << m << endl;
+             }
+             else if (choice == 3) {
+                 cout << "Enter integers a, b and modulus m: ";
+                 cin >> a >> b >> m;
+                 solveCongruence(a, b, m);
+             }
+             else {
+                 cout << "Invalid choice!\n";
+             }
+             /*
+                This is to test the command line arguments.
+                Uncomment the following lines to see the arguments passed to the program.
 
-
-    choice = atoi(argv[1]);
-
-    if (choice == 1) {
-       // cout << "Enter two positive integers: ";
-        //cin >> a >> b;
-        a = atoi(argv[2]);
-        b = atoi(argv[3]);
-        cout << "gcd(" << a << ", " << b << ") = " << gcd(a, b) << endl;
-    }
-    else if (choice == 2) {
-       // cout << "Enter integer a and modulus m: ";
-        //cin >> a >> m;
-        a = atoi(argv[2]);
-        m = atoi(argv[3]);
-        //cout << "Modular inverse of " << a << " mod " << m << " is " << modInverse(a, m) << endl;
-        cout << modInverse(a, m) << " is the inverse of " << a << " modulo " << m << endl;
-    }
-    else if (choice == 3) {
-       // cout << "Enter integers a, b and modulus m: ";
-       // cin >> a >> b >> m;
-
-        a = atoi(argv[2]);
-        b = atoi(argv[3]);
-        m = atoi(argv[4]);
-        solveCongruence(a, b, m);
-    }
-    else {
-        cout << "Invalid choice!\n";
-    }
-
+                 cout << "Number of arguments: " << argc << endl;
+                 for (int i = 0; i < argc; i++) {
+                     cout << "Argument " << i << ": " << argv[i] << endl;
+                 }
+              */
+     }
 
     return 0;
 }
